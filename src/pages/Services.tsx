@@ -1,5 +1,5 @@
 import React from "react";
 
 export default function Services() {
-    return ;
+    return <h1>Services page</h1>;
 }
