@@ -11,6 +11,10 @@ module.exports = {
         surface: 'rgb(217, 224, 230)',   // Cool Gray
         background: 'rgb(255, 255, 255)' // Pure White
       },
+      fontFamily: {
+        kantumruy: ["Kantumruy Pro", "sans-serif"],
+        montserrat: ["Montserrat", "sans-serif"],
+      },
     },
   },
   plugins: [],

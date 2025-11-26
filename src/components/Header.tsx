@@ -9,7 +9,7 @@ import Logo from "../assets/Logo.svg";
 export default function Header() {
     return (
         <Router>
-            <div className="p-5 flex gap-5 h-20 justify-between items-center overflow-y-hidden">
+            <div className="p-5 flex gap-5 h-20 justify-between items-center overflow-y-hidden bg-white">
                 <img src={Logo} alt="Logo" className="relative w-52 h-auto -left-[40px]"/>
                 <nav className="flex gap-5 items-bottom">
                 <Link to="/">Home</Link>
