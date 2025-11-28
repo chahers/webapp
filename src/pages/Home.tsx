@@ -4,16 +4,24 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import { Navigation, Pagination, Autoplay } from "swiper/modules";
-import banner1 from "../assets/pictures/troubleshoot2.png";
-import banner2 from "../assets/pictures/industryuniversitylab.png";
+import banner1 from "../assets/pictures/industryuniversitylab.png";
+import banner2 from "../assets/pictures/troubleshoot2.png";
+import photo from "../assets/pictures/test2edit.jpeg";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faFan, faBuildingCircleCheck, faFileContract, faVialCircleCheck } from "@fortawesome/free-solid-svg-icons";
-import photo1 from "../assets/pictures/design1.png"
+import { faFan, faBuildingCircleCheck, faFileContract, faVialCircleCheck, faBiohazard, faScaleUnbalanced, faPlugCircleBolt, faExplosion, faHouseCrack, faBugs, faCircleCheck } from "@fortawesome/free-solid-svg-icons";
+import photo1 from "../assets/pictures/design1.png";
+import { ReactComponent as Tower } from '../assets/tower.svg';
+import { ReactComponent as School } from '../assets/school.svg';
+import { ReactComponent as TestTubes } from '../assets/test-tubes.svg';
+import { ReactComponent as Factory } from '../assets/factory.svg';
+import { ReactComponent as AirCond } from '../assets/air-cond.svg';
+import { ReactComponent as Warehouse } from '../assets/warehouse.svg';
 
 export default function Home() {
     const bannerCarousel = [
         {image: banner1, title: 'cleaner air'}, 
-        {image: banner2, title: 'engineered flow'}];
+        {image: banner2, title: 'engineered flow'}
+    ];
 
     const whatWeDo = [
         {
@@ -36,7 +44,52 @@ export default function Home() {
             desc: 'Assistance with regulatory submissions to the Department of Environment (DOE).',
             icon: faFileContract,
         },
-    ]
+    ];
+
+    const whyVentilationMatters = [
+        {   
+            desc: 'Chemical exposure risks',
+            icon: faBiohazard,
+        },
+        {
+            desc:'Requlatory non-compliance',
+            icon: faScaleUnbalanced
+        },
+        {
+            desc: 'Energy wastage and high operating cost',
+            icon: faPlugCircleBolt,        
+        },
+        {
+            desc: "Inefficient production or laboratory operations",
+            icon: faHouseCrack,
+        },
+        {
+            desc: "Equipment damage, condensation, or contamination.",
+            icon: faBugs,
+        },
+        {
+            desc: "Worker discomfort (noise and odour) and safety hazards",
+            icon: faExplosion,
+        },
+    ];
+
+    const industries = [
+        { text: 'Scientific and research laboratories' , icon: TestTubes},
+        { text: 'Higher education institutions', icon: School},
+        { text: 'Semiconductor and electronics facilities', icon: Factory},
+        { text: 'Industrial production assembly lines', icon: Warehouse},
+        { text: 'Cleanrooms and controlled environments', icon: AirCond},
+        { text: 'Pilot plants, R&D facilities, and specialised ventilation spaces', icon: Tower},
+    ];
+
+    const whyairflo = [
+        {text: 'Engineering-driven methods'},
+        {text: 'Compliance-ready designs and reports'},
+        {text: 'Accurate, certified system testing'},
+        {text: 'Clear, professional communication'},
+        {text: 'Vendor-neutral and cost-efficient solutions'},
+        {text: 'Strong project experience across multiple industries'},
+    ];
 
     return (
         <>
@@ -61,7 +114,7 @@ export default function Home() {
                 {bannerCarousel.map((item, i) => {
                     return (
                         <SwiperSlide key={i}>
-                            <img src={item.image} className="w-full max-h-80 object-cover opacity-50" alt="air flo" />
+                            <img src={item.image} className="w-full max-h-80 object-cover opacity-50 [mask-image:linear-gradient(to_bottom,black_70%,transparent_100%)]" alt="air flo" />
                             <div className="absolute inset-0 flex items-center justify-center z-[999] ">
                                 <div key={i} className="sm:text-7xl text-base font-bold text-secondary">
                                     {item.title}
@@ -109,8 +162,97 @@ export default function Home() {
                 <p className="pl-12 pt-4 text-xl font-medium text-secondary opacity-60">
                     Airflo Systems Enterprise supports organisations in designing, testing, and improving industrial and laboratory ventilation systems — ensuring safe operations, efficient performance, and full regulatory compliance.   
                 </p>
-                <button type="button" className="w-80 ml-12 mt-12 p-8 btn bg-primary rounded-full text-xl shadow-[4px_6px_10px_-3px_#bfc9d4]">Request consultation</button>
-                <button type="button" className="w-80 ml-12 mt-4 p-8 btn bg-primary rounded-full text-xl shadow-[4px_6px_10px_-3px_#bfc9d4]">Book Performance Testing</button>
+                <button type="button" className="w-80 ml-12 mt-12 p-6 btn bg-primary rounded-full text-xl shadow-[4px_6px_10px_-3px_#bfc9d4] text-secondary">Request consultation</button>
+                <button type="button" className="w-80 ml-12 mt-4 p-6 btn bg-primary rounded-full text-xl shadow-[4px_6px_10px_-3px_#bfc9d4] text-secondary">Book Performance Testing</button>
+            </div>
+        </div>
+        {/* why your ventilation system matters multiple carousel cards*/}
+        <div className="flex flex-col py-16 justify-center overflow-hidden">
+             <h5 className="text-primary text-5xl font-bold text-center" >Why Your Ventilation System Matters</h5>   
+             <h1 className="text-center text-xl font-medium text-secondary opacity-80 pt-4 pb-16">A poorly designed or underperforming ventilation system can lead to:</h1>
+             <div className="swiper-wrapper w-full pl-8">
+                <Swiper
+                    modules={[Navigation, Pagination, Autoplay]}
+                    autoplay={{ delay: 5000 }}
+                    navigation={{
+                        nextEl: '.swiper-button-next-ex5',
+                        prevEl: '.swiper-button-prev-ex5',
+                    }}
+                    pagination={{
+                        clickable: true,
+                    }}
+                    breakpoints={{
+                        1536: {
+                            slidesPerView: 6,
+                            spaceBetween: 5,
+                        },
+                        1440: {
+                            slidesPerView: 5,
+                            spaceBetween: 5,
+                        },
+                        1280: {
+                            slidesPerView: 4,
+                            spaceBetween: 5,
+                        },
+                        1024: {
+                            slidesPerView: 3,
+                            spaceBetween: 5,
+                        },
+                        768: {
+                            slidesPerView: 2,
+                            spaceBetween: 5,
+                        },
+                        320: {
+                            slidesPerView: 1,
+                            spaceBetween: 5,
+                        },
+                    }}
+                    dir="ltr"
+                >
+                    {whyVentilationMatters.map((item, i) => {
+                        return (
+                            <SwiperSlide key={i}>
+                                <div className="relative max-w-[19rem] w-auto h-72 bg-white shadow-[4px_6px_10px_-3px_#bfc9d4] rounded border border-white-light dark:border-[#1b2e4b] dark:bg-[#191e3a] dark:shadow-none text-center justify-center pt-12 text-secondary">
+                                    <FontAwesomeIcon icon={item.icon} className="size-12"/>
+                                    <p className="mt-8 mx-4 text-xl text-secondary">
+                                        {item.desc}
+                                    </p>
+                                </div>
+                            </SwiperSlide>
+                        );
+                    })}
+                </Swiper>
+             </div>
+        </div>
+        {/* why airflo? */}
+        <div className="flex flex-row gap-16 justify-center pt-16 pb-28 w-full">
+            <div className="flex flex-col gap-6 justify-center">
+            <h1 className="text-5xl text-secondary font-bold pb-8">Why airflo?</h1>
+            {whyairflo.map((item) => {
+                return (
+                    <div className="flex flex-row">
+                    <FontAwesomeIcon icon={faCircleCheck} className="size-8 text-green-700"/>
+                    <p className="pl-4 text-xl text-secondary font-semibold opacity-60">
+                        {item.text}
+                    </p>
+                    </div>
+                );
+            })}
+            </div>
+                <img src={photo} alt='photo of machine' className="h-auto max-h-[550px] [mask-image:linear-gradient(to_top,black_70%,transparent_100%)]"/>
+        </div>
+        {/* industries we support */}
+        <div className="justify-center flex flex-col pb-24">
+            <h1 className="text-5xl text-primary text-center font-bold pb-16">Industries We Support</h1>
+            <div className="grid grid-rows-2 grid-flow-col gap-12 justify-center items-center">
+            {industries.map((item) =>{
+                const Icon = item.icon;
+                return(
+                    <div>
+                    <Icon className="size-28"/>
+                    </div>
+                );
+            })}
             </div>
         </div>
         </>
