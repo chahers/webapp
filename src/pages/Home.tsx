@@ -16,6 +16,7 @@ import { ReactComponent as TestTubes } from '../assets/test-tubes.svg';
 import { ReactComponent as Factory } from '../assets/factory.svg';
 import { ReactComponent as AirCond } from '../assets/air-cond.svg';
 import { ReactComponent as Warehouse } from '../assets/warehouse.svg';
+import Logo from "../assets/Logo.svg";
 
 export default function Home() {
     const bannerCarousel = [
@@ -162,8 +163,8 @@ export default function Home() {
                 <p className="pl-12 pt-4 text-xl font-medium text-secondary opacity-60">
                     Airflo Systems Enterprise supports organisations in designing, testing, and improving industrial and laboratory ventilation systems — ensuring safe operations, efficient performance, and full regulatory compliance.   
                 </p>
-                <button type="button" className="w-80 ml-12 mt-12 p-6 btn bg-primary rounded-full text-xl shadow-[4px_6px_10px_-3px_#bfc9d4] text-secondary">Request consultation</button>
-                <button type="button" className="w-80 ml-12 mt-4 p-6 btn bg-primary rounded-full text-xl shadow-[4px_6px_10px_-3px_#bfc9d4] text-secondary">Book Performance Testing</button>
+                <button type="button" className="w-80 ml-12 mt-12 p-6 btn bg-primary rounded-full text-xl font-medium shadow-[4px_6px_10px_-3px_#bfc9d4] text-secondary">Request consultation</button>
+                <button type="button" className="w-80 ml-12 mt-4 p-6 btn bg-primary rounded-full text-xl font-medium shadow-[4px_6px_10px_-3px_#bfc9d4] text-secondary">Book Performance Testing</button>
             </div>
         </div>
         {/* why your ventilation system matters multiple carousel cards*/}
@@ -253,6 +254,19 @@ export default function Home() {
                     </div>
                 );
             })}
+            </div>
+        </div>
+        {/* service links */}
+        <div className="relative w-full bg-blue-50 h-full [mask-image:linear-gradient(to_top,black_70%,transparent_100%)]">
+            <img src={Logo} className="w-full opacity-10 object-cover"/>
+            <div className="absolute inset-16 flex justify-self-center z-[999] bg-blue-100 w-11/12 h-4/5 opacity-70 rounded-full"/>
+            <div className="absolute inset-0 flex items-center justify-center z-[999]">
+                <div className="w-11/12 pl-8 pr-8 text-center">
+                <h1 className="text-5xl text-secondary font-bold pb-4">Ready to improve your Ventilation?</h1>
+                <p className="text-2xl">Whether you're facing a performance issue or planning a new installation, we are here to help.</p>
+                <button type="button" className="w-80 ml-12 mt-12 p-6 btn bg-primary rounded-full text-xl font-medium shadow-[4px_6px_10px_-3px_#bfc9d4] text-secondary">Request consultation</button>
+                <button type="button" className="w-80 ml-12 mt-4 p-6 btn bg-primary rounded-full text-xl font-medium shadow-[4px_6px_10px_-3px_#bfc9d4] text-secondary">Book Performance Testing</button>
+                </div>
             </div>
         </div>
         </>
