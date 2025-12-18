@@ -115,7 +115,7 @@ export default function Home() {
                 {bannerCarousel.map((item, i) => {
                     return (
                         <SwiperSlide key={i}>
-                            <img src={item.image} className="w-full max-h-80 object-cover opacity-50 [mask-image:linear-gradient(to_bottom,black_70%,transparent_100%)]" alt="air flo" />
+                            <img src={item.image} className="w-full max-h-80 opacity-50 [mask-image:linear-gradient(to_bottom,black_70%,transparent_100%)] mt-20" alt="air flo" />
                             <div className="absolute inset-0 flex items-center justify-center z-[999] ">
                                 <div key={i} className="sm:text-7xl text-base font-bold text-secondary">
                                     {item.title}
@@ -151,7 +151,7 @@ export default function Home() {
             </div>
         </div>
         {/* air flo description */}
-        <div className="relative w-full">
+        <div className="relative w-full bg-white">
             <img src={photo1} className="opacity-10 px-4"/>
             <div className="absolute inset-0 flex justify-center flex-col">
                 <h2 className="justify-center text-5xl font-bold text-secondary pl-12">
@@ -163,8 +163,6 @@ export default function Home() {
                 <p className="pl-12 pt-4 text-xl font-medium text-secondary opacity-60">
                     Airflo Systems Enterprise supports organisations in designing, testing, and improving industrial and laboratory ventilation systems — ensuring safe operations, efficient performance, and full regulatory compliance.   
                 </p>
-                <button type="button" className="w-80 ml-12 mt-12 p-6 btn bg-primary rounded-full text-xl font-medium shadow-[4px_6px_10px_-3px_#bfc9d4] text-secondary">Request consultation</button>
-                <button type="button" className="w-80 ml-12 mt-4 p-6 btn bg-primary rounded-full text-xl font-medium shadow-[4px_6px_10px_-3px_#bfc9d4] text-secondary">Book Performance Testing</button>
             </div>
         </div>
         {/* why your ventilation system matters multiple carousel cards*/}
@@ -257,15 +255,16 @@ export default function Home() {
             </div>
         </div>
         {/* service links */}
-        <div className="relative w-full bg-blue-50 h-full [mask-image:linear-gradient(to_top,black_70%,transparent_100%)]">
-            <img src={Logo} className="w-full opacity-10 object-cover"/>
+        <div className="relative w-full bg-primary h-full [mask-image:linear-gradient(to_top,black_70%,transparent_100%)]">
+            <img src={Logo} className="relative w-full opacity-0 object-cover -left-[40px]"/>
             <div className="absolute inset-16 flex justify-self-center z-[999] bg-blue-100 w-11/12 h-4/5 opacity-70 rounded-full"/>
             <div className="absolute inset-0 flex items-center justify-center z-[999]">
                 <div className="w-11/12 pl-8 pr-8 text-center">
-                <h1 className="text-5xl text-secondary font-bold pb-4">Ready to improve your Ventilation?</h1>
-                <p className="text-2xl">Whether you're facing a performance issue or planning a new installation, we are here to help.</p>
-                <button type="button" className="w-80 ml-12 mt-12 p-6 btn bg-primary rounded-full text-xl font-medium shadow-[4px_6px_10px_-3px_#bfc9d4] text-secondary">Request consultation</button>
-                <button type="button" className="w-80 ml-12 mt-4 p-6 btn bg-primary rounded-full text-xl font-medium shadow-[4px_6px_10px_-3px_#bfc9d4] text-secondary">Book Performance Testing</button>
+                <h1 className="text-5xl text-secondary font-bold pb-4">Ready to Improve Your Ventilation?</h1>
+                <p className="text-xl pb-12 font-medium">Whether you're facing a performance issue or planning a new installation, we are here to help.</p>
+                <button type="button" className="w-auto mt-4 px-4 mx-4 btn rounded-full bg-primary text-xl font-medium shadow-[4px_6px_10px_-3px_#bfc9d4] text-secondary h-16">Request Consultation</button>
+                <button type="button" className="w-auto mt-4 px-4  mx-4 btn rounded-full  bg-primary text-xl font-medium shadow-[4px_6px_10px_-3px_#bfc9d4] text-secondary h-16">Book Performance Testing</button>
+                <button type="button" className="w-auto mt-4 px-4  mx-4 btn rounded-full  bg-primary text-xl font-medium shadow-[4px_6px_10px_-3px_#bfc9d4] text-secondary h-16">System Troubleshooting</button>
                 </div>
             </div>
         </div>
