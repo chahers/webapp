@@ -12,6 +12,10 @@ export default function About() {
         {text: 'Long-term system performance and reliability'},
     ]
     return (
+        <>
+        <head>
+            <title>About | airflo systems</title>
+        </head>
         <div className="relative min-h-screen">
             <img src={photo} className="fixed -z-10 inset-0 object-cover w-full h-auto opacity-10"/>
             <ContentTitle title='About Us'/>
@@ -32,7 +36,7 @@ export default function About() {
                         <div className="flex text-xl font-medium text-secondary pl-12 py-8">Our Mission</div>
                         <div className="flex ml-4 h-[3px] w-24 bg-secondary opacity-60"></div>
                     </div>
-                    <div className="p-12 text-2xl font-bold text-secondary opacity-70 ">To provide reliable engineering solutions that enhance workplace safety, ensure regulatory compliance, and optimise ventilation performance through detailed design analysis and certified system testing.
+                    <div className="p-12 text-2xl font-bold text-secondary opacity-70 ">To provide dependable engineering solutions that keep workplaces safe, compliant, and efficiently ventilated.
                     </div>
                 </div>
                 <div className="bg-secondary">
@@ -41,7 +45,7 @@ export default function About() {
                         </div>
                         <div className="flex ml-4 h-[3px] w-24 bg-white opacity-60"></div>
                     </div>
-                    <div className="p-12 text-2xl font-bold text-white opacity-70 ">To provide reliable engineering solutions that enhance workplace safety, ensure regulatory compliance, and optimise ventilation performance through detailed design analysis and certified system testing.
+                    <div className="p-12 text-2xl font-bold text-white opacity-70 ">Delivering reliable ventilation solutions through sound engineering, data-driven design, clear communication, and systems tailored to meet both regulatory requirements and long-term operational needs.
                     </div>
                 </div>
             </div>
@@ -67,5 +71,6 @@ export default function About() {
                 })}
             </ul>
         </div>
+        </>
     );
 }
