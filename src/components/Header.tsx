@@ -7,12 +7,14 @@ import Services from "../pages/Services";
 import Projects from "../pages/Projects";
 import Contact from "../pages/Contact";
 import Logo from "../assets/Logo.svg";
+import ScrollToTop from "./ScrollToTop";
 
 export default function Header() {
   const [open, setOpen] = useState(false);
 
   return (
     <Router>
+      <ScrollToTop />
       <header className="fixed top-0 z-50 w-full bg-white shadow-sm">
         <div className="relative mx-auto h-24 flex max-w-7xl items-center justify-between px-4 sm:px-6 ">
           <img src={Logo} alt="Logo" className="absolute left-1/2 h-24 w-auto -translate-x-1/2 md:static md:translate-x-0 md:h-28"/>
