@@ -34,12 +34,12 @@ export default function Home() {
         },
         {
             point: 'Certified Performance Testing', 
-            desc: 'Testing by Hygiene Technician 2-certified personnel (DOSH) for Engineering Control Equipment such as Local Exhaust Venttilation (LEV) and General Exhaust Ventilation (GEV) systems.',
+            desc: 'Testing by Hygiene Technician 2-certified personnel (DOSH) for Engineering Control Equipment such as Local Exhaust Ventilation (LEV) and General Exhaust Ventilation (GEV) systems.',
             icon: faVialCircleCheck,
         },
         {
             point: 'Troubleshooting & System Operation', 
-            desc: 'Identifying airflow issues, pressure losses, hood in efficiencies, fan problems, noise, clogged air, cleaning devices and overall system instability.',
+            desc: 'Identifying airflow issues, pressure losses, hood inefficiencies, fan problems, noise, clogged air cleaning devices and overall system instability.',
             icon: faBuildingCircleCheck,
         },
         {
@@ -82,7 +82,6 @@ export default function Home() {
         { text: 'Semiconductor and electronics facilities', icon: Factory},
         { text: 'Industrial production assembly lines', icon: Warehouse},
         { text: 'Cleanrooms and controlled environments', icon: AirCond},
-        { text: 'Pilot plants, R&D facilities, and specialised ventilation spaces', icon: Tower},
     ];
 
     const whyairflo = [
@@ -100,166 +99,170 @@ export default function Home() {
         <>
         <head>
             <title>Home | airflo systems</title>
-            <meta
-                name="description"
-                content="Professional ventilation solutions for homes and businesses in Malaysia"
-            />
         </head>
-        {/* carousel banner container */}
+
+        {/* HERO / CAROUSEL */}
         <Swiper
             modules={[Navigation, Autoplay, Pagination]}
-            navigation={{ nextEl: '.swiper-button-next-ex2', prevEl: '.swiper-button-prev-ex2' }}
             pagination={{ clickable: true }}
-            autoplay={{ delay: 2000 }}
-            className="swiper max-w-full mx-auto mb-5"
-            id="slider2"
-            dir="ltr"
+            autoplay={{ delay: 2500 }}
+            className="w-full"
         >
-            <div className="swiper-wrapper">
-                {bannerCarousel.map((item, i) => {
-                    return (
-                        <SwiperSlide key={i}>
-                            <img src={item.image} className="w-full max-h-80 opacity-50 [mask-image:linear-gradient(to_bottom,black_70%,transparent_100%)] mt-20" alt="air flo" />
-                            <div className="absolute inset-0 flex items-center justify-center z-[999] ">
-                                <div key={i} className="sm:text-7xl text-base font-bold text-secondary">
-                                    {item.title}
-                                </div>
-                            </div>
-                        </SwiperSlide>
-                    );
-                })}
-            </div>
+            {bannerCarousel.map((item, i) => (
+                <SwiperSlide key={i} className="relative">
+                    <img
+                        src={item.image}
+                        alt="airflo banner"
+                        className="
+                            w-full
+                            h-[260px]
+                            sm:h-[360px]
+                            lg:h-[480px]
+                            xl:h-[520px]
+                            object-cover
+                            object-center
+                            opacity-50
+                        "
+                    />
+
+                    <div className="absolute inset-0 flex items-center justify-center">
+                        <h1 className="text-2xl sm:text-5xl font-bold text-secondary">
+                            {item.title}
+                        </h1>
+                    </div>
+                </SwiperSlide>
+            ))}
         </Swiper>
-        {/* what we do container */}
-        <div className="py-8 px-4 flex flex-col items-center gap-8 h-full"> 
-            <h2 className="flex text-center justify-center text-5xl font-bold text-primary">
+
+        {/* WHAT WE DO */}
+        <section className="px-4 py-16 max-w-7xl mx-auto">
+            <h2 className="text-3xl md:text-5xl font-bold text-primary text-center">
                 What we do
             </h2>
-            <h5 className="text-secondary text-xl font-semibold mb-4 dark:text-white-light">We help facilities achieve safe, efficient, and compliant ventilation performance through:</h5>
-            <div className="flex flex-row gap-6 justify-center">
-                {whatWeDo.map((item, i) => {
+            <p className="text-secondary text-lg text-center mt-4 mb-12">
+                We help facilities achieve safe, efficient, and compliant ventilation performance through:
+            </p>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                {whatWeDo.map((item, i) => (
+                    <div
+                        key={i}
+                        className="bg-white rounded shadow p-6 text-center"
+                    >
+                        <div className="bg-secondary inline-flex p-3 rounded-full mb-4">
+                            <FontAwesomeIcon icon={item.icon} className="size-10 text-white" />
+                        </div>
+                        <h5 className="text-secondary text-lg font-semibold mb-2">
+                            {item.point}
+                        </h5>
+                        <p className="text-sm text-secondary opacity-70">
+                            {item.desc}
+                        </p>
+                    </div>
+                ))}
+            </div>
+        </section>
+
+        {/* BRAND STATEMENT */}
+        <section className="relative bg-white px-4 py-20">
+            <img src={photo1} className="absolute inset-0 w-full h-full object-cover opacity-10" />
+            <div className="relative max-w-4xl mx-auto text-center">
+                <h2 className="text-3xl md:text-5xl font-bold text-secondary">
+                    Cleaner air. Engineered flow.
+                </h2>
+                <p className="mt-6 text-lg md:text-xl text-secondary opacity-80">
+                    Trusted ventilation experts for safer, compliant, and well-performing facilities.
+                </p>
+                <p className="mt-4 text-secondary opacity-60">
+                    Airflo Systems Enterprise supports organisations in designing, testing,
+                    and improving industrial and laboratory ventilation systems.
+                </p>
+            </div>
+        </section>
+
+        {/* WHY VENTILATION MATTERS */}
+        <section className="py-20 px-12">
+            <h2 className="text-3xl md:text-5xl font-bold text-primary text-center">
+                Why Your Ventilation System Matters
+            </h2>
+            <p className="text-center text-secondary mt-4 mb-12">
+                A poorly designed system can lead to:
+            </p>
+
+            <Swiper
+                modules={[Pagination, Autoplay]}
+                autoplay={{ delay: 4000 }}
+                pagination={{ clickable: true }}
+                spaceBetween={24}
+                breakpoints={{
+                    320: { slidesPerView: 1 },
+                    768: { slidesPerView: 2 },
+                    1024: { slidesPerView: 3 },
+                    1280: { slidesPerView: 4 },
+                }}
+                className=""
+            >
+                {whyVentilationMatters.map((item, i) => (
+                    <SwiperSlide key={i}>
+                        <div className="bg-white h-72 rounded-lg border-solid border-gray-200 border-2 flex flex-col items-center justify-center text-center p-6">
+                            <FontAwesomeIcon icon={item.icon} className="size-10 text-secondary" />
+                            <p className="mt-6 text-secondary">
+                                {item.desc}
+                            </p>
+                        </div>
+                    </SwiperSlide>
+                ))}
+            </Swiper>
+        </section>
+
+        {/* WHY US */}
+        <section className="px-4 py-20 max-w-7xl mx-auto">
+            <div className="flex flex-col md:flex-row gap-12 items-center">
+                <div className="flex-1">
+                    <h2 className="text-3xl md:text-5xl font-bold text-secondary mb-8">
+                        Why Us?
+                    </h2>
+                    {whyairflo.map((item, i) => (
+                        <div key={i} className="flex items-center gap-3 mb-4">
+                            <FontAwesomeIcon icon={faCircleCheck} className="text-green-700" />
+                            <p className="text-secondary opacity-70">
+                                {item.text}
+                            </p>
+                        </div>
+                    ))}
+                </div>
+
+                <img
+                    src={photo}
+                    className="w-full md:w-1/2 rounded"
+                    alt="ventilation equipment"
+                />
+            </div>
+        </section>
+
+        {/* INDUSTRIES */}
+        <section className="px-4 py-20">
+            <h2 className="text-3xl md:text-5xl font-bold text-primary text-center mb-12">
+                Industries We Support
+            </h2>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-8 justify-items-center">
+                {industries.map((item, i) => {
+                    const Icon = item.icon;
                     return (
-                        <div key={i} className="mb-5 flex items-center justify-center">
-                            <div className="max-w-[19rem] w-full h-full bg-white shadow-[4px_6px_10px_-3px_#bfc9d4] rounded border border-white-light dark:border-[#1b2e4b] dark:bg-[#191e3a] dark:shadow-none">
-                                <div className="py-7 px-6">
-                                    <div className="relative bg-[#3b3f5c] mb-5 inline-block p-3 text-surface rounded-full bg-secondary left-1/3 shadow-[4px_6px_10px_-3px_#bfc9d4]">
-                                        <FontAwesomeIcon icon={item.icon} className="size-12"/>
-                                    </div>
-                                    <h5 className="text-secondary text-xl font-semibold mb-4 dark:text-white-light">{item.point}</h5>
-                                    <p>{item.desc}</p>
-                                </div>
-                            </div>
+                        <div key={i} className="text-center w-[150px]">
+                            <Icon className="size-20 text-primary mx-auto mb-4" />
+                            <p className="text-sm text-primary">
+                                {item.text}
+                            </p>
                         </div>
                     );
                 })}
             </div>
-        </div>
-        {/* air flo description */}
-        <div className="relative w-full bg-white">
-            <img src={photo1} className="opacity-10 px-4"/>
-            <div className="absolute inset-0 flex justify-center flex-col">
-                <h2 className="justify-center text-5xl font-bold text-secondary pl-12">
-                    Cleaner air. Engineered flow.
-                </h2>
-                <h1 className="pl-12 pt-8 text-2xl font-medium text-secondary opacity-80">
-                    Trusted ventilation experts for safer, compliant, and well performing facilities.
-                </h1>
-                <p className="pl-12 pt-4 text-xl font-medium text-secondary opacity-60">
-                    Airflo Systems Enterprise supports organisations in designing, testing, and improving industrial and laboratory ventilation systems — ensuring safe operations, efficient performance, and full regulatory compliance.   
-                </p>
-            </div>
-        </div>
-        {/* why your ventilation system matters multiple carousel cards*/}
-        <div className="flex flex-col py-16 justify-center overflow-hidden">
-             <h5 className="text-primary text-5xl font-bold text-center" >Why Your Ventilation System Matters</h5>   
-             <h1 className="text-center text-xl font-medium text-secondary opacity-80 pt-4 pb-16">A poorly designed or underperforming ventilation system can lead to:</h1>
-             <div className="swiper-wrapper w-full pl-8">
-                <Swiper
-                    modules={[Navigation, Pagination, Autoplay]}
-                    autoplay={{ delay: 5000 }}
-                    navigation={{
-                        nextEl: '.swiper-button-next-ex5',
-                        prevEl: '.swiper-button-prev-ex5',
-                    }}
-                    pagination={{
-                        clickable: true,
-                    }}
-                    breakpoints={{
-                        1536: {
-                            slidesPerView: 6,
-                            spaceBetween: 5,
-                        },
-                        1440: {
-                            slidesPerView: 5,
-                            spaceBetween: 5,
-                        },
-                        1280: {
-                            slidesPerView: 4,
-                            spaceBetween: 5,
-                        },
-                        1024: {
-                            slidesPerView: 3,
-                            spaceBetween: 5,
-                        },
-                        768: {
-                            slidesPerView: 2,
-                            spaceBetween: 5,
-                        },
-                        320: {
-                            slidesPerView: 1,
-                            spaceBetween: 5,
-                        },
-                    }}
-                    dir="ltr"
-                >
-                    {whyVentilationMatters.map((item, i) => {
-                        return (
-                            <SwiperSlide key={i}>
-                                <div className="relative max-w-[19rem] w-auto h-72 bg-white shadow-[4px_6px_10px_-3px_#bfc9d4] rounded border border-white-light dark:border-[#1b2e4b] dark:bg-[#191e3a] dark:shadow-none text-center justify-center pt-12 text-secondary">
-                                    <FontAwesomeIcon icon={item.icon} className="size-12"/>
-                                    <p className="mt-8 mx-4 text-xl text-secondary">
-                                        {item.desc}
-                                    </p>
-                                </div>
-                            </SwiperSlide>
-                        );
-                    })}
-                </Swiper>
-             </div>
-        </div>
-        {/* why airflo? */}
-        <div className="flex flex-row gap-16 justify-center pt-16 pb-28 w-full">
-            <div className="flex flex-col gap-6 justify-center">
-            <h1 className="text-5xl text-secondary font-bold pb-8">Why airflo?</h1>
-            {whyairflo.map((item) => {
-                return (
-                    <div className="flex flex-row">
-                    <FontAwesomeIcon icon={faCircleCheck} className="size-8 text-green-700"/>
-                    <p className="pl-4 text-xl text-secondary font-semibold opacity-60">
-                        {item.text}
-                    </p>
-                    </div>
-                );
-            })}
-            </div>
-                <img src={photo} alt='photo of machine' className="h-auto max-h-[550px] [mask-image:linear-gradient(to_top,black_70%,transparent_100%)]"/>
-        </div>
-        {/* industries we support */}
-        <div className="justify-center flex flex-col pb-24">
-            <h1 className="text-5xl text-primary text-center font-bold pb-16">Industries We Support</h1>
-            <div className="grid grid-rows-2 grid-flow-col gap-12 justify-center items-center">
-            {industries.map((item) =>{
-                const Icon = item.icon;
-                return(
-                    <div>
-                    <Icon className="size-28"/>
-                    </div>
-                );
-            })}
-            </div>
-        </div>
-        {/* service links */}
-        <ServiceFooter/>
+        </section>
+
+        <ServiceFooter />
         </>
     );
+
 }
