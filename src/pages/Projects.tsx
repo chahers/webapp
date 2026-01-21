@@ -6,7 +6,7 @@ import project1 from "../assets/pictures/project1-cover.png";
 
 const project1desc = {
     problem: 'The existing Local Exhaust Ventilation (LEV) systems failed to achieve the required capture velocity and did not meet performance expectations set by the local authority. The systems also contributed to operational inefficiencies and elevated exposure risks.',
-    work: ['Conducted a tull engineering design evaluation of the existing LEV systems', 
+    work: ['Conducted a full engineering design evaluation of the existing LEV systems', 
     'Performed detailed measurements and testing',
     'Identified root causes related to improper hood design, sizing, and specifications',
     "Collaborated with the client's technical team in Japan to justify a complete system upgrade",
