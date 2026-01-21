@@ -28,6 +28,9 @@ export default function Header() {
             <Link to="/services" className="font-medium hover:text-cyan-500">
               Services
             </Link>
+            <Link to="/projects" className="font-medium hover:text-cyan-500">
+              Projects
+            </Link>
             <Link to="/contact" className="font-medium hover:text-cyan-500">
               Contact Us
             </Link>
@@ -54,6 +57,9 @@ export default function Header() {
               </Link>
               <Link to="/services" onClick={() => setOpen(false)} className="font-medium">
                 Services
+              </Link>
+              <Link to="/projects" onClick={() => setOpen(false)} className="font-medium">
+                Projects
               </Link>
               <Link to="/contact" onClick={() => setOpen(false)} className="font-medium">
                 Contact Us

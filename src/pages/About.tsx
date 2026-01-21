@@ -26,7 +26,7 @@ export default function About() {
 
         <ContentTitle title="About Us" />
 
-        <section className="mx-auto mt-12 max-w-6xl px-4 sm:px-6">
+        <section className="mx-auto mt-16 max-w-6xl px-4 sm:px-6">
           <div className="grid grid-cols-1 gap-2 md:grid-cols-2">
             <div className="bg-white p-6 sm:p-10">
               <h2 className="text-2xl font-bold text-secondary sm:text-3xl">

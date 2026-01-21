@@ -91,7 +91,7 @@ export default function Services() {
 
         <ContentTitle title="Services" />
 
-        <section className="mx-auto max-w-5xl px-4 pt-12 text-secondary sm:px-6">
+        <section className="mx-auto max-w-5xl px-4 pt-16 text-secondary sm:px-6">
           <div className="rounded-lg bg-white/70 p-6 sm:p-10">
             <p className="text-base leading-relaxed sm:text-lg">
               Airflo Systems Enterprise delivers engineering services that
@@ -124,7 +124,6 @@ export default function Services() {
                 />
 
                 <div className="p-5 sm:p-8">
-                  {/* Title */}
                   <div className="flex items-center gap-3">
                     <FontAwesomeIcon
                       icon={item.icon}

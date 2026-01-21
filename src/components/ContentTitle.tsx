@@ -8,7 +8,7 @@ export default function ContentTitle({ title }: Props) {
       <div
         className="
           absolute top-0 h-[150px] w-full bg-primary opacity-40
-          sm:h-[150px] lg:h-[300px]
+          sm:h-[150px] lg:h-[230px]
           [mask-image:linear-gradient(to_bottom,black_70%,transparent_100%)]
         "
       />
