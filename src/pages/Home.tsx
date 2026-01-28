@@ -55,7 +55,7 @@ export default function Home() {
             icon: faBiohazard,
         },
         {
-            desc:'Requlatory non-compliance',
+            desc:'Regulatory non-compliance',
             icon: faScaleUnbalanced
         },
         {
@@ -252,7 +252,7 @@ export default function Home() {
                     return (
                         <div key={i} className="text-center w-[150px]">
                             <Icon className="size-20 text-primary mx-auto mb-4" />
-                            <p className="text-sm text-primary">
+                            <p className="text-sm text-blue-700">
                                 {item.text}
                             </p>
                         </div>
